@@ -65,3 +65,38 @@ button:hover{
   color:#CA1740;
   background-color: #fff;
 }
+
+.imageMainCont {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+}
+
+img.md-card-image {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+
+h4 {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  text-decoration: overline;
+  padding: 10px;
+}
+
+.image-container {
+  background: #00b8ff78 !important;
+  border-radius: 10px !important;
+  margin: 10px !important;
+}
+.image-container[_ngcontent-ugx-c43] {
+  width: 300px;
+  min-height: 100px;
+  max-width: 300px;
+  margin: 8px;
+  border-radius: 2px;
+  box-shadow: 2px 2px 4px 1px rgb(0 0 0 / 14%) !important;
+  overflow: hidden;
+}
