@@ -1,1 +1,39 @@
-<p>image-list works!</p>
+<!-- npm install @angular/material -->
+<!-- npm install bootstrap -->
+<!-- npm i angular2-masonry -->
+<div class='md-card headCont'>
+    <div class='md-input-container'>
+      <input class="search" mdInput [(ngModel)]="searchQuery"
+      name="search" placeholder="Search for images">
+    </div>
+    <br>
+    <button (click)="SearchImages(searchQuery)"
+      class="searchButton  md-raised-button" type="button">Find Images</button>
+</div>
+  
+  <div *ngIf="searching">
+    <div class='md-progress-bar' mode="indeterminate"></div>
+  </div>
+  
+  <div class='md-card'>
+    <h4 *ngIf="imagesFound" md-subeader>Results</h4>
+    <div >
+      <div *ngFor="let image of images" class="image-container">
+        <div class='md-card imagesCont'>
+          <a href="{{ image.pageURL }}" target="_bank">
+            <div class='md-card-header'>
+              <div class="avatar" md-card-avatar [ngStyle]="{'background-image':'url('+ image.userImageURL +')', 'background-size':'40px 40px'}"></div>
+              <div class='md-card-title'>User: {{ image.user }}</div>
+            </div>
+            <img class='md-card-image' src="{{image.webformatURL}}">
+            <div class='md-card-content'>
+              <p>Tags: {{ image.tags }}</p>
+              <p>Comments: {{ image.comments }}</p>
+              <p>Likes: {{ image.likes }}</p>
+            </div>
+          </a>
+        </div>
+        <br><br>
+    </div>
+</div>
+</div>
